@@ -4,6 +4,7 @@ const Koa = require('koa')
 const Router = require('koa-router')
 const koaStatic = require('koa-static')
 const koaMount = require('koa-mount')
+const LRU = require('lru-cache')
 const { createBundleRenderer } = require('vue-server-renderer')
 const ssrDevServer = require('./ssr-dev-server')
 
@@ -65,7 +66,10 @@ function createRenderer(bundle, options = {}) {
   return createBundleRenderer(
     bundle,
     Object.assign(options, {
-      runInNewContext: false
+      runInNewContext: false,
+      cache: LRU({
+        max: 10000
+      })
     })
   )
 }

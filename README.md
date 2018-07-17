@@ -42,10 +42,6 @@ npm run production
 
 ## Known issues && hacked
 
-> Page onloaded but Vue will warn `[Vue warn]: The client-side rendered virtual DOM tree is not matching server-rendered content.`
-
-If not to use `<vue-progress-bar />` in `App.vue`, this waring will not happen
-
 > Sometimes Vue will warn `[Vue warn]: Property or method "_ssrNode" is not defined on the instance but referenced during render` when started the server
 
 You can remove and reinstall `koa-webpack-middleware`, but I have no idea why this will happen

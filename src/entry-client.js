@@ -1,8 +1,4 @@
-import Vue from 'vue'
-import VueProgressBar from 'vue-progressbar'
 import { createApp } from './app'
-
-Vue.use(VueProgressBar, { thickness: '4px', color: '#42b983' })
 
 const { app, router, store } = createApp()
 
